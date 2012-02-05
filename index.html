@@ -1,0 +1,127 @@
+<html>
+	<head>
+	
+		<title>Password Generator</title>
+		
+		<script src="pWordLib.js" type="text/javascript"></script>
+		<script src="words.js" type="text/javascript"></script>
+		
+		<style type="text/css">
+			body {
+				font-family: sans-serif;
+				color: #666;
+			}
+		
+			.container {
+				width: 500px;
+				margin: 0 auto;
+				background-color: #eee;
+				padding: 10px 20px;
+				border-radius: 10px;
+			}
+			
+			h1 {
+				text-align: center;
+			}
+			
+			.options {
+				padding: 5px 0;
+			}
+			
+			.options input {
+				display: block;
+				margin-right: 10px;
+				height: 20px;
+				width: 20px;
+				float: left;
+			}
+			.options input[type=number] {
+				height: 40px;
+				font-size: 20px;
+				border-radius: 10px;
+				
+				width: 70px;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			#result {
+				border-radius: 10px;
+				padding: 3px 10px;
+				font-size: 30px;
+				height: 70px;
+				width: 100%;
+				border: 2px solid #aaa;
+				margin-top: 20px;
+				font-family: monospace;
+			}
+			
+			#create {
+				position: relative;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				-o-appearance: none;
+				font-size: 20px;
+				color: #666;
+				width: 120px;
+				padding: 10px;
+				border-radius: 10px;
+				border: 2px solid #aaa;
+				background-color: transparent;
+				margin: 20px 180px;
+			}
+			
+			#create:hover {
+				border-color: #444;
+				background-color: #aaa;
+				color: white;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="container">
+			<h1>Password Generator</h1>
+			<div class="options">
+				<label for="lowercase">Lowercase</label>
+				<input type="checkbox" id="lowercase" name="lowercase" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>
+				
+				<label for="uppercase">Uppercase</label>
+				<input type="checkbox" id="uppercase" name="uppercase" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>
+				
+				<label for="numbers">Numbers</label>
+				<input type="checkbox" id="numbers" name="numbers" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>
+				
+				<label for="symbolsSimple">Symbols: simple</label>
+				<input type="checkbox" id="symbolsSimple" name="symbolsSimple" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>
+				
+				<label for="symbolsComplex">Symbols: complex</label>
+				<input type="checkbox" id="symbolsComplex" name="symbolsComplex" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>
+				
+				<label for="words">Words</label>
+				<input type="checkbox" id="words" name="words" onchange="pWordLib.setOptions();" checked="true" />
+				<div class="clear"></div>
+				
+				<label for="overflow">Overflow</label>
+				<input type="checkbox" id="overflow" name="overflow" onchange="pWordLib.setOptions();" />
+				<div class="clear"></div>				
+				
+				<label for="length">Password Length</label>
+				<input type="number" id="length" name="length" onchange="pWordLib.setOptions();" value="10" />
+			</div>
+			
+			<input type="text" id="result" placeholder="Result" />
+			<input type="button" id="create" value="Generate" onclick="pWordLib.create();"/>
+		</div>
+		
+	</body>
+</html>
